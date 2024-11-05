@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рекомендации</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/rec.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <div class="top-contacts">
+            <a href=""><img src="{{ url_for('static', filename='img/vk.png') }}" alt=""></a>
+            <a href=""><img src="{{ url_for('static', filename='img/tg.png') }}" alt=""></a>
+            <a href=""><img src="{{ url_for('static', filename='img/ok.png') }}" alt=""></a>
+        </div>
+        <div class="header">
+            <div class="header__logo">
+                <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt=""></a>
+            </div>
+            <div class="header__wrapper">
+                <div class="header__ads">
+                    <a href=""><p>Реклама</p></a>
+                </div>
+                <div class="header__nav">
+                    <a href="/recommendations">Рекомендации</a>
+                    <a href="/dictionary">Словарь</a>
+                    
+                        {% if username != 'Войти' %}
+                            <a href="/profile">{{ username }}</a>
+                        {% else %}
+                            <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Войти</a>
+                        {% endif %}
+                    
+                    <img src="{{url_for('static', filename='img/loupe-Photoroom.png')}}" class="loupe" alt="">
+                    <div class="search"><input type="text" placeholder="Поиск"></div>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+   <!-- Модальное окно -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" >
+            <div class="modal-content rounded-4 shadow">
+            <div class="modal-header  border-bottom-0">
+                <span class="fw-bold border-bottom border-danger" >Вход</span>
+                <span class="fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Регистрация</span>
+                
+            </div>
+        
+            <div class="modal-body p-5 pt-5">
+                <form class="" action="/login" method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" name="username" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Имя</label>
+                </div>
+                <div class="form-floating mb-1">
+                    <input type="password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Пароль</label>
+                </div>
+                <span><a href="">Забыли пароль?</a></span>
+                <button class="w-100 mb-2 mt-5 btn btn-lg rounded-3 btn-primary" type="submit">Войти</button>
+                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                <hr class="my-4">
+                
+                </form>
+            </div>
+            </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" >
+            <div class="modal-content rounded-4 shadow">
+            <div class="modal-header  border-bottom-0">
+                <span class="fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Вход</span>
+                <span class="fw-bold border-bottom border-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Регистрация</span>
+                
+            </div>
+        
+            <div class="modal-body p-5 pt-5">
+                <form class="">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Имя</label>
+                </div>    
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Эл.почта</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Пароль</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Повторите пароль</label>
+                </div>
+                <button class="w-100 mb-2 mt-4 btn btn-lg rounded-3 btn-primary" type="submit">Зарегистрироваться</button>
+                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                <hr class="my-4">
+                
+                </form>
+            </div>
+            </div>
+      </div>
+    </div>
+    <!-- Модальное окно -->
+    <!-- Шапка -->
+    <!-- Крошки -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Рекомендации</li>
+        </ol>
+    </nav>
+    <!-- Крошки -->
+
+    <!-- Вступительная часть -->
+    <div class="intro">
+        <div class="intro-block">
+            
+        </div>
+        <div class="intro-text t-46" >
+                А ты точно в безопасности?
+            </div>
+        <div class="intro-list">
+            <p style="margin-left: -40px;">7емь ключей к безопасности ваших данных</p>
+            <ul class="t16" style="list-style: none; padding: auto 70px auto 70px; line-height: 27px;">
+                <li>1. Используйте надежные пароли</li>
+                <li>2. Обновляйте программное обеспечение</li>
+                <li>3. Осторожно с электронными письмами</li>
+                <li>4. Используйте двухфакторную аутентификацию</li>
+                <li>5. Будьте осторожны в общественных сетях</li>
+                <li>6. Регулярно делайте резервное копирование данных</li>
+                <li>7. Обучайте себя и своих близких</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Вступительная часть  -->
+
+    <!-- 1 пункт -->
+    <div class="sect s1">
+        <h6>1. Используйте надежные пароли</h6>
+        <div class="notation">
+            <div class="f-card">Что делает пароль надежным?</div>
+            <div class="n-cards">
+                <div class="n-card">Использование верхнего и нижнего регистра, чисел и символов</div>
+                <div class="n-card">Длина пароля 10 или более символов</div>
+                <div class="n-card">Отсутствие простых комбинаций букв и цифр</div>
+                <div class="n-card">Отсутствие публичной информации</div>
+            </div>
+        </div>
+        <div class="notation-text">
+            <ul>
+                <li>Не используйте одинаковые пароли для важных ресурсов: соцсети, почта, государственные сайты, интернет-банк</li>
+                <li>Придумайте пароль самостоятельно, не используйте общедоступную информацию о себе</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 1 пункт -->
+
+    <!-- 2 пункт -->
+    <div class="sect s2">
+        <h6>2. Обновляйте программное обеспечение</h6>
+        <div class="s2-pack">
+            <div class="update-text">
+                Поставщики программного обеспечения выпускают обновления по множеству причин,
+                включая расширение функциональных возможностей, исправление ошибок и обновление
+                для системы безопасности. Обязательно обновляйте программное обеспечение до последней
+                версии, как только она становится доступна.
+            </div>
+            <img src="{{url_for('static', filename='img/image 2.png')}}" alt="">
+        </div>
+        
+    </div>
+    <!-- 2 пункт -->
+
+     <!-- 3 пункт -->
+    <div class="sect">
+        <h6>3. Осторожно с электронными письмами</h6>
+        <div class="text-fishing">
+            <p>Фишинг - мошенничество, при котором злоумышленники запрашивают конфиденциальные данные, выдавая себя за надежные источники.</p>
+            <p>Не торопитесь переходить по ссылкам из входящих писем</p>
+        </div>
+        <div class="list-sec">
+            <p>Как определить фишинговое письмо? </p>
+            <ul>
+                <li>Проверьте автора письма</li>
+                <li>Оцените содержание</li>
+                <li>Наведите курсор на ссылку</li>
+                <li>Оцените вложенный файл</li>
+            </ul>
+        </div>
+        
+    </div>
+    <!-- 3 пункт -->
+
+     <!-- 4 пункт -->
+    <div class="sect s4">
+        <h6>4. Используйте двухфакторную аутентификацию</h6>
+        <p>Двухфакторная = 2 этапа и это очень надежно</p>
+        <div class="d-pict">
+            <img src="data:image/jpeg;base64,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" alt="">
+            <img src="data:image/jpeg;base64,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" alt="">
+        </div>
+    </div>
+    <!-- 4 пункт -->
+
+     <!-- 5 пункт -->
+    <div class="sect ">
+        <h6>5. Будьте осторожны в общественных сетях</h6>
+        <div class="s5">
+            <p>Ограничьте количество личной информации, которой делитесь в социальных сетях, 
+                чтобы не стать жертвой кибермошенников.
+            </p>
+            <img src="{{url_for('static', filename='img/image 6.png')}}" alt="">
+        </div>
+        <img src="{{url_for('static', filename='img/image 7.png')}}" alt="" style="margin-left: 270px;">
+    </div>
+    <!-- 5 пункт -->
+
+     <!-- 6 пункт -->
+    <div class="sect s6">
+        <h6>6. Регулярно делайте резервное копирование данных: регулярно создавайте резервные копии важных файлов,
+            чтобы в случае атаки или сбоя системы можно было восстановить данные.
+        </h6>
+        <img src="{{url_for('static', filename='img/image 8.png')}}" alt="">
+    </div>
+    <!-- 6 пункт -->
+
+     <!-- 7 пункт -->
+    <div class="sect s7">
+        <h6>7. Обучайте себя и своих близких: Проводите обучающие сессии по кибербезопасности для себя и своих близких,
+            чтобы повысить осведомленность о возможных угрозах.
+        </h6>
+        <img src="{{url_for('static', filename='img/image 9.png')}}" alt="">
+    </div>
+    <!-- 7 пункт -->
+
+    <!-- Подвал -->
+    <footer>
+        <div class="subscripe">
+            <p class="t-46">Будь в курсе событий</p>
+            <div class="wrapper-form">
+                <form action="">
+                    <input type="text" placeholder="Введите эл. почту">
+                    <button>Подписаться</button>
+                </form>
+            </div>
+        </div>
+        <div class="mid">
+            <p class="t-46">Подписывайтесь на наши соцсети</p>
+            <div class="social">
+                <a href=""><img src="{{ url_for('static', filename='img/vk.png') }}" alt=""></a>
+            <a href=""><img src="{{ url_for('static', filename='img/tg.png') }}" alt=""></a>
+            <a href=""><img src="{{ url_for('static', filename='img/ok.png') }}" alt=""></a>
+                <a href=""><img src="{{ url_for('static', filename='img/dzen.png') }}" alt=""></a>
+            </div>
+            <div class="nav-links">
+                <a href="/recommendations">Рекомендации</a>
+                <a href="/dictionary">Словарь</a>
+                {% if username != 'Войти' %}
+                    <a href="/profile">{{ username }}</a>
+                {% else %}
+                    <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Войти</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="buttom">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" class="n1" alt="">
+            <p class="n2">&copy Copyright 2024</p>
+            <input type="text" placeholder="Поиск" >
+        </div>
+    </footer>
+    <!-- Подвал -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const btn  = document.querySelector('.loupe')
+        const search = document.querySelector('.search')
+        const gg = document.body
+
+        btn.addEventListener('click', ()=>{
+            search.classList.toggle('show')
+        })
+
+        document.addEventListener('click', (event) => {
+            if (!search.contains(event.target) && event.target !== btn) {
+                search.classList.remove('show'); 
+            }
+        });
+        
+
+
+        
+    </script>
+    </body>
+    </html>

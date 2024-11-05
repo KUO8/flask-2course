@@ -77,6 +77,7 @@ def news_page(news_id):
     else: 
         username = session['username']
         user_id = get_user_id(username)
+        print(get_users_comm(news_id))
         return render_template('news.html', username=username, news=one_news(news_id), categor=categor_news(one_news(news_id)[9]), fav=check_fav(news_id,username), rait=check_rait(news_id, user_id), comm_users=get_comm_users_news(news_id),users_comm_i=get_users_comm(news_id))
 
 @app.route("/add_to_favorites/<int:news_id>", methods=['GET'])

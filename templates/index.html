@@ -1,233 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Home</title>
 </head>
-<body>
-    <!-- Шапка -->
+
+<body><div id="load"></div>
+    <div id="contents">
     <header>
-        <div class="top-contacts">
-            <a href=""><img src="{{ url_for('static', filename='img/vk.png') }}" alt=""></a>
-            <a href=""><img src="{{ url_for('static', filename='img/tg.png') }}" alt=""></a>
-            <a href=""><img src="{{ url_for('static', filename='img/ok.png') }}" alt=""></a>
+        <div class="uplinks">
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                    viewBox="0 0 30 30">
+                    <path
+                        d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M21.361,18.967 l-1.868,0.026c0,0-0.403,0.079-0.93-0.285c-0.699-0.48-1.358-1.729-1.872-1.567c-0.521,0.166-0.505,1.29-0.505,1.29 s0.004,0.198-0.115,0.327c-0.129,0.139-0.382,0.125-0.382,0.125h-0.837c0,0-1.846,0.153-3.473-1.543 c-1.772-1.849-3.338-5.498-3.338-5.498s-0.092-0.23,0.006-0.348c0.111-0.13,0.41-0.134,0.41-0.134l2-0.01 c0,0,0.188,0.033,0.324,0.133c0.111,0.082,0.174,0.236,0.174,0.236s0.323,0.819,0.752,1.561c0.836,1.446,1.224,1.763,1.508,1.608 c0.414-0.226,0.29-2.044,0.29-2.044s0.008-0.66-0.208-0.954c-0.168-0.229-0.484-0.297-0.622-0.314 c-0.113-0.015,0.071-0.277,0.311-0.395c0.36-0.176,0.996-0.186,1.747-0.179c0.585,0.006,0.754,0.042,0.982,0.098 c0.69,0.167,0.456,0.811,0.456,2.356c0,0.495-0.089,1.191,0.267,1.42c0.154,0.099,0.529,0.015,1.464-1.579 c0.445-0.756,0.778-1.644,0.778-1.644s0.073-0.158,0.186-0.226c0.116-0.07,0.272-0.048,0.272-0.048l2.105-0.013 c0,0,0.632-0.076,0.735,0.211c0.108,0.3-0.236,1.001-1.096,2.148c-1.412,1.884-1.569,1.709-0.396,2.799 c1.12,1.041,1.351,1.547,1.39,1.611C22.339,18.906,21.361,18.967,21.361,18.967z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                    viewBox="0 0 30 30">
+                    <path
+                        d="M 25.154297 3.984375 C 24.829241 3.998716 24.526384 4.0933979 24.259766 4.2011719 C 24.010014 4.3016357 23.055766 4.7109106 21.552734 5.3554688 C 20.048394 6.0005882 18.056479 6.855779 15.931641 7.7695312 C 11.681964 9.5970359 6.9042108 11.654169 4.4570312 12.707031 C 4.3650097 12.746607 4.0439208 12.849183 3.703125 13.115234 C 3.3623292 13.381286 3 13.932585 3 14.546875 C 3 15.042215 3.2360676 15.534319 3.5332031 15.828125 C 3.8303386 16.121931 4.144747 16.267067 4.4140625 16.376953 C 5.3912284 16.775666 8.4218473 18.015862 8.9941406 18.25 C 9.195546 18.866983 10.29249 22.222526 10.546875 23.044922 C 10.714568 23.587626 10.874198 23.927519 11.082031 24.197266 C 11.185948 24.332139 11.306743 24.45034 11.453125 24.542969 C 11.511635 24.579989 11.575789 24.608506 11.640625 24.634766 L 11.644531 24.636719 C 11.659471 24.642719 11.67235 24.652903 11.6875 24.658203 C 11.716082 24.668202 11.735202 24.669403 11.773438 24.677734 C 11.925762 24.726927 12.079549 24.757812 12.216797 24.757812 C 12.80196 24.757814 13.160156 24.435547 13.160156 24.435547 L 13.181641 24.419922 L 16.191406 21.816406 L 19.841797 25.269531 C 19.893193 25.342209 20.372542 26 21.429688 26 C 22.057386 26 22.555319 25.685026 22.875 25.349609 C 23.194681 25.014192 23.393848 24.661807 23.478516 24.21875 L 23.478516 24.216797 C 23.557706 23.798129 26.921875 6.5273437 26.921875 6.5273438 L 26.916016 6.5507812 C 27.014496 6.1012683 27.040303 5.6826405 26.931641 5.2695312 C 26.822973 4.8564222 26.536648 4.4608905 26.181641 4.2480469 C 25.826669 4.0352506 25.479353 3.9700339 25.154297 3.984375 z M 24.966797 6.0742188 C 24.961997 6.1034038 24.970391 6.0887279 24.962891 6.1230469 L 24.960938 6.1347656 L 24.958984 6.1464844 C 24.958984 6.1464844 21.636486 23.196371 21.513672 23.845703 C 21.522658 23.796665 21.481573 23.894167 21.439453 23.953125 C 21.379901 23.91208 21.257812 23.859375 21.257812 23.859375 L 21.238281 23.837891 L 16.251953 19.121094 L 12.726562 22.167969 L 13.775391 17.96875 C 13.775391 17.96875 20.331562 11.182109 20.726562 10.787109 C 21.044563 10.471109 21.111328 10.360953 21.111328 10.251953 C 21.111328 10.105953 21.035234 10 20.865234 10 C 20.712234 10 20.506484 10.14875 20.396484 10.21875 C 18.963383 11.132295 12.671823 14.799141 9.8515625 16.439453 C 9.4033769 16.256034 6.2896636 14.981472 5.234375 14.550781 C 5.242365 14.547281 5.2397349 14.548522 5.2480469 14.544922 C 7.6958673 13.491784 12.47163 11.434667 16.720703 9.6074219 C 18.84524 8.6937992 20.838669 7.8379587 22.341797 7.1933594 C 23.821781 6.5586849 24.850125 6.1218894 24.966797 6.0742188 z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                    viewBox="0 0 50 50">
+                    <path
+                        d="M 9 4 C 6.24 4 4 6.24 4 9 L 4 41 C 4 43.76 6.24 46 9 46 L 41 46 C 43.76 46 46 43.76 46 41 L 46 9 C 46 6.24 43.76 4 41 4 L 9 4 z M 25 9 C 29.42 9 33 12.58 33 17 C 33 21.42 29.42 25 25 25 C 20.58 25 17 21.42 17 17 C 17 12.58 20.58 9 25 9 z M 25 13 A 4 4 0 0 0 21 17 A 4 4 0 0 0 25 21 A 4 4 0 0 0 29 17 A 4 4 0 0 0 25 13 z M 33 26.490234 C 33.63 26.490234 34.250625 26.789609 34.640625 27.349609 C 35.270625 28.249609 35.050625 29.500859 34.140625 30.130859 C 32.640625 31.180859 30.99 31.939922 29.25 32.419922 L 34.410156 37.589844 C 35.200156 38.369844 35.200156 39.630156 34.410156 40.410156 C 34.020156 40.800156 33.51 41 33 41 C 32.49 41 31.979844 40.800156 31.589844 40.410156 L 25 33.830078 L 18.410156 40.410156 C 18.020156 40.800156 17.51 41 17 41 C 16.49 41 15.979844 40.800156 15.589844 40.410156 C 14.799844 39.630156 14.799844 38.369844 15.589844 37.589844 L 20.75 32.419922 C 19.02 31.939922 17.369141 31.190625 15.869141 30.140625 C 14.969141 29.510625 14.739141 28.269375 15.369141 27.359375 C 15.759141 26.799375 16.379531 26.5 17.019531 26.5 C 17.409531 26.5 17.810156 26.619375 18.160156 26.859375 C 20.170156 28.259375 22.54 29 25 29 C 27.47 29 29.839375 28.259609 31.859375 26.849609 C 32.199375 26.609609 32.6 26.490234 33 26.490234 z">
+                    </path>
+                </svg></a>
         </div>
-        <div class="header">
-            <div class="header__logo">
-                <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt=""></a>
-            </div>
-            <div class="header__wrapper">
-                <div class="header__ads">
-                    <a href=""><p>Реклама</p></a>
-                </div>
-                <div class="header__nav">
+        <div class="cont">
+            <nav>
+                <a class="logo" href="/"><img src="{{ url_for('static', filename='img/svg.svg') }}" alt=""></a>
+
+                <div class="burger"></div>
+                <div class="nav-">
                     <a href="/recommendations">Рекомендации</a>
                     <a href="/dictionary">Словарь</a>
                     
                         {% if username != 'Войти' %}
-                            <a href="/profile">{{ username }}</a>
+                            <a href="/profile">Профиль</a>
                         {% else %}
                             <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Войти</a>
                         {% endif %}
-                    
-                    <img src="{{url_for('static', filename='img/loupe-Photoroom.png')}}" class="loupe" alt="">
-                    <div class="search"><input type="text" placeholder="Поиск"></div>
+                    <input type="text" id="search-input-1" placeholder="Поиск" class="search">
+                    <img src="{{url_for('static', filename='img/loupe-Photoroom.png')}}" alt="" class="loupe">
                 </div>
-            </div>
+            </nav>
         </div>
-        
+
     </header>
-   <!-- Модальное окно -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" >
-            <div class="modal-content rounded-4 shadow">
-            <div class="modal-header  border-bottom-0">
-                <span class="fw-bold border-bottom border-danger" >Вход</span>
-                <span class="fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Регистрация</span>
-                
-            </div>
-        
-            <div class="modal-body p-5 pt-5">
-                <form class="" action="/login" method="post">
-                <div class="form-floating mb-3">
-                    <input type="text" name="username" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Имя</label>
-                </div>
-                <div class="form-floating mb-1">
-                    <input type="password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Пароль</label>
-                </div>
-                <span><a href="">Забыли пароль?</a></span>
-                <button class="w-100 mb-2 mt-5 btn btn-lg rounded-3 btn-primary" type="submit">Войти</button>
-                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-                <hr class="my-4">
-                
-                </form>
-            </div>
-            </div>
-      </div>
-    </div>
 
 
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" >
-            <div class="modal-content rounded-4 shadow">
-            <div class="modal-header  border-bottom-0">
-                <span class="fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Вход</span>
-                <span class="fw-bold border-bottom border-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Регистрация</span>
-                
-            </div>
-        
-            <div class="modal-body p-5 pt-5">
-                <form class="" action="/register" method="post">
-                <div class="form-floating mb-3">
-                    <input type="text" name="username" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Имя</label>
-                </div>    
-                <div class="form-floating mb-3">
-                    <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Эл.почта</label>
-                </div>
-                
-                <div class="form-floating mb-3">
-                    <input type="password" name="password" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Пароль</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" name="rep_password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Повторите пароль</label>
-                </div>
-                <button class="w-100 mb-2 mt-4 btn btn-lg rounded-3 btn-primary" type="submit">Зарегистрироваться</button>
-                <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
-                <hr class="my-4">
-                
-                </form>
-            </div>
-            </div>
-      </div>
-    </div>
-    <!-- Модальное окно -->
-    <!-- Шапка -->
-
-    <!-- Популярное за неделю -->
-    <div class="top-section">
-        <div class="top-on-week-cards">
-
-            {% for k in top[1:5] %}
-            <a href="{{ url_for('news_page', news_id = k[0]) }}">
-                <div class="ncard">
-                    <p class="data">{{ k[5] }}</p>
-                    <p class="title">{{ k[1] }}</p>
-                </div>
-            </a> 
-            {% endfor %}  
+<!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+        <div class="modal-content rounded-4 shadow">
+        <div class="modal-header  border-bottom-0">
+            <span class="fw-bold border-bottom border-danger" >Вход</span>
+            <span class="fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Регистрация</span>
             
         </div>
-        <a href="{{ url_for('news_page', news_id = top[0][0]) }}" style="text-decoration: none; color: black;">
-            <div class="top-on-week-card">
-                <div class="bord" style="background-image: url('{{ top[0][4] }}'); background-size: cover; background-position: center;"></div>
-                <div class="text-bord"><p>{{ top[0][1] }}</p></div>
+    
+        <div class="modal-body p-5 pt-5">
+            <form class="" action="/login" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Имя</label>
             </div>
-        </a>
-        
-    </div>
-    <!-- Популярное за неделю -->
+            <div class="form-floating mb-1">
+                <input type="password" name="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Пароль</label>
+            </div>
+            <span><a href="">Забыли пароль?</a></span>
+            <button class="w-100 mb-2 mt-5 btn btn-lg rounded-3 btn-primary" type="submit">Войти</button>
+            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+            <hr class="my-4">
+            
+            </form>
+        </div>
+        </div>
+  </div>
+</div>
 
-    <!-- Свежие новости -->
-    <h1>Новости</h1>
-    <div class="section-news">
-        {% for f in news %}
-        <a href="{{ url_for('news_page', news_id = f[0]) }}">
-            <div class="new-card">
-                <img class="new-card__img" src="{{ f[4] }}" alt="">
-                <div class="new-info">
-                    <div class="new-info__top">
-                        <p class="d14">{{f[5]}}</p>
-                        <div class="view">
-                            <img src="{{ url_for('static', filename='img/eye-Photoroom.png')}}" alt="">
-                            <p>{{f[6]}}</p>
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+        <div class="modal-content rounded-4 shadow">
+        <div class="modal-header  border-bottom-0">
+            <span class="fw-bold " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Вход</span>
+            <span class="fw-bold border-bottom border-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal2" style="cursor: pointer;">Регистрация</span>
+            
+        </div>
+    
+        <div class="modal-body p-5 pt-5">
+            <form class="" action="/register" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" name="username" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Имя</label>
+            </div>    
+            <div class="form-floating mb-3">
+                <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Эл.почта</label>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input type="password" name="password" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Пароль</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" name="rep_password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Повторите пароль</label>
+            </div>
+            <button class="w-100 mb-2 mt-4 btn btn-lg rounded-3 btn-primary" type="submit">Зарегистрироваться</button>
+            <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+            <hr class="my-4">
+            
+            </form>
+        </div>
+        </div>
+  </div>
+</div>
+<!-- Модальное окно -->
+
+
+
+
+    <div class="cont">
+        <div class="top-section">
+            <div class="top4">
+                {% for k in top[1:5] %}
+                <a href="{{ url_for('news_page', news_id = k[0]) }}" style="text-decoration: none; color: black;">
+                <div class="top-item">
+                    <span>{{ k[5] }}</span>
+                    <p>{{ k[1] }}</p>
+                </div></a>
+                {% endfor %}  
+                
+            </div>
+            <div class="top1">
+                <a href="{{ url_for('news_page', news_id = top[0][0]) }}" style="text-decoration: none;">
+
+                <div class="img-top" style="background-image: url('{{ top[0][4] }}')"></div>
+                <div class="top-text">{{ top[0][1] }}</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="cont">
+        <div class="block-news">
+            <h1 style="margin-top: 10%;">Новости</h1>
+            <div class="news-list">
+                {% for f in news %}
+                <a href="{{ url_for('news_page', news_id = f[0]) }}" style="text-decoration: none; color: black;">
+                <div class="news-item" data-title="{{ f[1] }}" data-subtitle="{{ f[2] }}" id="news-{{ loop.index }}">
+                    <div class="news-photo" style="background-image: url('{{ f[4] }}');"></div>
+                    <div class="news-inf">
+                        <span>{{f[5]}}</span>
+                        <div class="views">{{f[6]}}</div>
+                        <div>
+                            <div class="news-title">{{f[1]}}</div>
+                            <div class="news-subtitle">{{f[2]}} </div>
                         </div>
+
                     </div>
-                    <div class="new-info__bottom">
-                        <div class="new-title t16">{{f[1]}}</div>
-                        <div class="new-discription d14">{{f[2]}}  </div>
+                </div></a>
+                {% endfor %}
+                
+                </div>
+
+                <div class="news-pagination">
+                    <div class="left"><</div>
+                            <div class="num-pagination"><a href="">1</a> <a href="">2</a> <a href="">3</a></div>
+                            <div class="right">></div>
                     </div>
                 </div>
             </div>
-        </a>   
-        {% endfor %}
-    </div>
-    <!-- Свежие новости -->
-
-    <!-- Переключатель страниц -->
-    <div class="switch">
-        <div class="first" style="margin-right: 35px;"><a href="">На первую</a></div>
-        <div class="previous" style="font-size: 32px;"><</div>
-        <div class="pages-numerate">
-            <a href="" class="pages-numerate__link">1</a>
-            <a href="" class="pages-numerate__link">2</a>
-            <a href="" class="pages-numerate__link">3</a>
         </div>
-        <div class="next" style="font-size: 32px;">></div>
-        <div class="last" style="margin-left: 35px;"><a href="">На последнюю</a></div>
     </div>
-    <!-- Переключатель страниц -->
+    <div class="cont">
+        <div class="share-news">
+            <div class="share-news-photo" style="background-image: url('{{ url_for('static', filename='img/logo.png') }}');"></div>
+            <div class="">
+                <h1>Последние новости из мира <br> кибербезопасности</h1>
+                <p>Есть что рассказать?<br>
+                    Пишите на abc@gmail.com
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
     
-    <!-- Поделиться инсайдом -->
-    <div class="share-inside" >
-        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
-        <div class="share-inside__text">
-            <div class="share-inside__text-top t-46"><pre>Последние новости из мира 
-кибербезопасности</pre> </div>
-            <div class="share-inside__text-bottom t-32"><pre>Есть что рассказать?
-Пишите на <mark>abc@gmail.com</mark></pre></div>
-        </div>
-    </div>
-    <!-- Поделиться инсайдом -->
-
-    <!-- Подвал -->
-    <footer>
-        <div class="subscripe">
-            <p class="t-46">Будь в курсе событий</p>
-            <div class="wrapper-form">
-                <form action="">
-                    <input type="text" placeholder="Введите эл. почту">
-                    <button>Подписаться</button>
-                </form>
+        <footer class="footer">
+            <div class="cont">
+        <div class="subscrubes">
+            <h1>Будь в курсе событий</h1>
+            <div>
+                <input type="email" placeholder="Введите эл. почту" required>
+                <button>Подписаться</button>
             </div>
         </div>
-        <div class="mid">
-            <p class="t-46">Подписывайтесь на наши соцсети</p>
-            <div class="social">
-                <a href=""><img src="{{ url_for('static', filename='img/vk.png') }}" alt=""></a>
-            <a href=""><img src="{{ url_for('static', filename='img/tg.png') }}" alt=""></a>
-            <a href=""><img src="{{ url_for('static', filename='img/ok.png') }}" alt=""></a>
-                <a href=""><img src="{{ url_for('static', filename='img/dzen.png') }}" alt=""></a>
+        <div class="our-links">
+            <div style="display: flex;justify-content: center;"><h1>Подписывайтесь на наши соцсети
+            </h1></div>
+            <div class="set-links">
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                    viewBox="0 0 30 30">
+                    <path
+                        d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M21.361,18.967 l-1.868,0.026c0,0-0.403,0.079-0.93-0.285c-0.699-0.48-1.358-1.729-1.872-1.567c-0.521,0.166-0.505,1.29-0.505,1.29 s0.004,0.198-0.115,0.327c-0.129,0.139-0.382,0.125-0.382,0.125h-0.837c0,0-1.846,0.153-3.473-1.543 c-1.772-1.849-3.338-5.498-3.338-5.498s-0.092-0.23,0.006-0.348c0.111-0.13,0.41-0.134,0.41-0.134l2-0.01 c0,0,0.188,0.033,0.324,0.133c0.111,0.082,0.174,0.236,0.174,0.236s0.323,0.819,0.752,1.561c0.836,1.446,1.224,1.763,1.508,1.608 c0.414-0.226,0.29-2.044,0.29-2.044s0.008-0.66-0.208-0.954c-0.168-0.229-0.484-0.297-0.622-0.314 c-0.113-0.015,0.071-0.277,0.311-0.395c0.36-0.176,0.996-0.186,1.747-0.179c0.585,0.006,0.754,0.042,0.982,0.098 c0.69,0.167,0.456,0.811,0.456,2.356c0,0.495-0.089,1.191,0.267,1.42c0.154,0.099,0.529,0.015,1.464-1.579 c0.445-0.756,0.778-1.644,0.778-1.644s0.073-0.158,0.186-0.226c0.116-0.07,0.272-0.048,0.272-0.048l2.105-0.013 c0,0,0.632-0.076,0.735,0.211c0.108,0.3-0.236,1.001-1.096,2.148c-1.412,1.884-1.569,1.709-0.396,2.799 c1.12,1.041,1.351,1.547,1.39,1.611C22.339,18.906,21.361,18.967,21.361,18.967z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                    viewBox="0 0 30 30">
+                    <path
+                        d="M 25.154297 3.984375 C 24.829241 3.998716 24.526384 4.0933979 24.259766 4.2011719 C 24.010014 4.3016357 23.055766 4.7109106 21.552734 5.3554688 C 20.048394 6.0005882 18.056479 6.855779 15.931641 7.7695312 C 11.681964 9.5970359 6.9042108 11.654169 4.4570312 12.707031 C 4.3650097 12.746607 4.0439208 12.849183 3.703125 13.115234 C 3.3623292 13.381286 3 13.932585 3 14.546875 C 3 15.042215 3.2360676 15.534319 3.5332031 15.828125 C 3.8303386 16.121931 4.144747 16.267067 4.4140625 16.376953 C 5.3912284 16.775666 8.4218473 18.015862 8.9941406 18.25 C 9.195546 18.866983 10.29249 22.222526 10.546875 23.044922 C 10.714568 23.587626 10.874198 23.927519 11.082031 24.197266 C 11.185948 24.332139 11.306743 24.45034 11.453125 24.542969 C 11.511635 24.579989 11.575789 24.608506 11.640625 24.634766 L 11.644531 24.636719 C 11.659471 24.642719 11.67235 24.652903 11.6875 24.658203 C 11.716082 24.668202 11.735202 24.669403 11.773438 24.677734 C 11.925762 24.726927 12.079549 24.757812 12.216797 24.757812 C 12.80196 24.757814 13.160156 24.435547 13.160156 24.435547 L 13.181641 24.419922 L 16.191406 21.816406 L 19.841797 25.269531 C 19.893193 25.342209 20.372542 26 21.429688 26 C 22.057386 26 22.555319 25.685026 22.875 25.349609 C 23.194681 25.014192 23.393848 24.661807 23.478516 24.21875 L 23.478516 24.216797 C 23.557706 23.798129 26.921875 6.5273437 26.921875 6.5273438 L 26.916016 6.5507812 C 27.014496 6.1012683 27.040303 5.6826405 26.931641 5.2695312 C 26.822973 4.8564222 26.536648 4.4608905 26.181641 4.2480469 C 25.826669 4.0352506 25.479353 3.9700339 25.154297 3.984375 z M 24.966797 6.0742188 C 24.961997 6.1034038 24.970391 6.0887279 24.962891 6.1230469 L 24.960938 6.1347656 L 24.958984 6.1464844 C 24.958984 6.1464844 21.636486 23.196371 21.513672 23.845703 C 21.522658 23.796665 21.481573 23.894167 21.439453 23.953125 C 21.379901 23.91208 21.257812 23.859375 21.257812 23.859375 L 21.238281 23.837891 L 16.251953 19.121094 L 12.726562 22.167969 L 13.775391 17.96875 C 13.775391 17.96875 20.331562 11.182109 20.726562 10.787109 C 21.044563 10.471109 21.111328 10.360953 21.111328 10.251953 C 21.111328 10.105953 21.035234 10 20.865234 10 C 20.712234 10 20.506484 10.14875 20.396484 10.21875 C 18.963383 11.132295 12.671823 14.799141 9.8515625 16.439453 C 9.4033769 16.256034 6.2896636 14.981472 5.234375 14.550781 C 5.242365 14.547281 5.2397349 14.548522 5.2480469 14.544922 C 7.6958673 13.491784 12.47163 11.434667 16.720703 9.6074219 C 18.84524 8.6937992 20.838669 7.8379587 22.341797 7.1933594 C 23.821781 6.5586849 24.850125 6.1218894 24.966797 6.0742188 z">
+                    </path>
+                </svg></a>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                    viewBox="0 0 50 50">
+                    <path
+                        d="M 9 4 C 6.24 4 4 6.24 4 9 L 4 41 C 4 43.76 6.24 46 9 46 L 41 46 C 43.76 46 46 43.76 46 41 L 46 9 C 46 6.24 43.76 4 41 4 L 9 4 z M 25 9 C 29.42 9 33 12.58 33 17 C 33 21.42 29.42 25 25 25 C 20.58 25 17 21.42 17 17 C 17 12.58 20.58 9 25 9 z M 25 13 A 4 4 0 0 0 21 17 A 4 4 0 0 0 25 21 A 4 4 0 0 0 29 17 A 4 4 0 0 0 25 13 z M 33 26.490234 C 33.63 26.490234 34.250625 26.789609 34.640625 27.349609 C 35.270625 28.249609 35.050625 29.500859 34.140625 30.130859 C 32.640625 31.180859 30.99 31.939922 29.25 32.419922 L 34.410156 37.589844 C 35.200156 38.369844 35.200156 39.630156 34.410156 40.410156 C 34.020156 40.800156 33.51 41 33 41 C 32.49 41 31.979844 40.800156 31.589844 40.410156 L 25 33.830078 L 18.410156 40.410156 C 18.020156 40.800156 17.51 41 17 41 C 16.49 41 15.979844 40.800156 15.589844 40.410156 C 14.799844 39.630156 14.799844 38.369844 15.589844 37.589844 L 20.75 32.419922 C 19.02 31.939922 17.369141 31.190625 15.869141 30.140625 C 14.969141 29.510625 14.739141 28.269375 15.369141 27.359375 C 15.759141 26.799375 16.379531 26.5 17.019531 26.5 C 17.409531 26.5 17.810156 26.619375 18.160156 26.859375 C 20.170156 28.259375 22.54 29 25 29 C 27.47 29 29.839375 28.259609 31.859375 26.849609 C 32.199375 26.609609 32.6 26.490234 33 26.490234 z">
+                    </path>
+                </svg></a>
+                <a href=""><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+                    <path d="M46.894 23.986c.004 0 .007 0 .011 0 .279 0 .545-.117.734-.322.192-.208.287-.487.262-.769C46.897 11.852 38.154 3.106 27.11 2.1c-.28-.022-.562.069-.77.262-.208.192-.324.463-.321.746C26.193 17.784 28.129 23.781 46.894 23.986zM46.894 26.014c-18.765.205-20.7 6.202-20.874 20.878-.003.283.113.554.321.746.186.171.429.266.679.266.03 0 .061-.001.091-.004 11.044-1.006 19.787-9.751 20.79-20.795.025-.282-.069-.561-.262-.769C47.446 26.128 47.177 26.025 46.894 26.014zM22.823 2.105C11.814 3.14 3.099 11.884 2.1 22.897c-.025.282.069.561.262.769.189.205.456.321.734.321.004 0 .008 0 .012 0 18.703-.215 20.634-6.209 20.81-20.875.003-.283-.114-.555-.322-.747C23.386 2.173 23.105 2.079 22.823 2.105zM3.107 26.013c-.311-.035-.555.113-.746.321-.192.208-.287.487-.262.769.999 11.013 9.715 19.757 20.724 20.792.031.003.063.004.094.004.25 0 .492-.094.678-.265.208-.192.325-.464.322-.747C23.741 32.222 21.811 26.228 3.107 26.013z"></path>
+                    </svg></a>
             </div>
-            <div class="nav-links">
-                <a href="/recommendations">Рекомендации</a>
-                <a href="/dictionary">Словарь</a>
-                {% if username != 'Войти' %}
-                    <a href="/profile">{{ username }}</a>
+        </div>
+        <nav>
+            <div class="text">
+                <a href="/recommendations" type="button">Рекомендации</a></div>
+                <div class="text"><a href="/dictionary" type="button">Словарь</a></div>
+                <div class="text">
+                    {% if username != 'Войти' %}
+                    <a href="/profile" type="button">Профиль</a>
                 {% else %}
                     <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Войти</a>
-                {% endif %}
-            </div>
+                {% endif %}</div>
+            
+            
+        </nav>
+        <div class="footer-bottom">
+            <a class="logo" href="/"><img src="{{ url_for('static', filename='img/svg.svg') }}" alt=""></a>
+
+            <span>&copy; Copyright 2024</span>
+            <input type="text" id="search-input-2" placeholder="поиск">
         </div>
-        <div class="buttom">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" class="n1" alt="">
-            <p class="n2">&copy Copyright 2024</p>
-            <input type="text" placeholder="Поиск" >
         </div>
     </footer>
-    <!-- Подвал -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script>
-        const btn  = document.querySelector('.loupe')
+</div>
+    
+    
+    
+<script>
+    const btn  = document.querySelector('.loupe')
         const search = document.querySelector('.search')
         const gg = document.body
 
@@ -240,14 +272,64 @@
                 search.classList.remove('show'); 
             }
         });
-        {% if msg %}
+
+    document.onreadystatechange = function () {
+    var state = document.readyState
+    if (state == 'interactive') {
+         document.getElementById('contents').style.visibility="hidden";
+    } else if (state == 'complete') {
+        setTimeout(function(){
+           document.getElementById('interactive');
+           document.getElementById('load').style.visibility="hidden";
+           document.getElementById('contents').style.visibility="visible";
+        },1000);
+    }
+  }
+    let burger = document.getElementsByClassName('burger')[0]
+    burger.onclick = () => {
+        burger.classList.toggle('active')
+    }
+    {% if msg %}
             alert("{{ msg }}");
         {% endif %}
-        
+
+
+        function setupSearch(inputId) {
+        document.getElementById(inputId).addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const searchText = this.value.toLowerCase();
+                const newsItems = document.querySelectorAll('.news-item');
+                let found = false;
+
+                newsItems.forEach(item => {
+                    item.style.border = 'none';
+                });
+
+                newsItems.forEach(item => {
+                    const title = item.getAttribute('data-title').toLowerCase();
+                    const subtitle = item.getAttribute('data-subtitle').toLowerCase();
+                    
+                    if (title.includes(searchText) || subtitle.includes(searchText)) {
+                        item.style.border = '2px solid red';
+                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        found = true;
+                    }
+                });
+
+                if (!found) {
+                    alert('Новость не найдена');
+                }
+            }
+        });
+    }
+
+    // Настраиваем оба поля поиска
+    setupSearch('search-input-1');
+    setupSearch('search-input-2');
 
 
 
-        
-    </script>
+</script>
 </body>
+
 </html>

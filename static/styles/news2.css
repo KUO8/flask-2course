@@ -1,0 +1,372 @@
+body{
+    margin: 0;
+    width: 100%;
+}
+.t16{
+    font-size: 16px;
+}
+.d14{
+    font-size: 14px;
+}
+.t-46{
+    font-size: 46px;
+}
+.t-32{
+    font-size: 32px;
+}
+
+/* Шапка */
+.top-contacts{
+    position: absolute;
+    top:18px;
+    right: 130px;
+
+    display: flex;
+    gap: 40px;
+
+}
+.top-contacts img{
+    width: 30px;
+    height: 30px;
+    
+}
+.header{
+    margin-top: 70px;
+    display: flex;
+    font-size: 14px;
+    background: #b5b5b5;
+    width: 100%;
+    position: relative;
+}
+.header a{
+    text-decoration: none;
+    color: rgb(44, 48, 63);
+}
+.header__logo img{
+    height: 130px;
+    justify-content: space-around;
+    margin-left: 220px;
+    margin-right: 270px;
+}
+
+.header__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.header__nav{
+    display: flex;
+    gap: 210px;
+}
+.header__nav img{
+    height: 20px;
+    width: 20px;
+}
+.loupe{
+    cursor: pointer;
+}
+.search{
+    position: absolute;
+    right: 350px;
+    top: 75px;
+    display: none;
+    transition: all 3s ease;
+
+}
+.search input{
+    width: 750px;
+    border-radius: 15px;
+    padding: 6px;
+
+}
+.show{
+    display: block;
+}
+/* Шапка */
+/* Модальное окно */
+.modal{ 
+    padding-top: 140px;
+}
+.modal-header{
+    padding: 0 150px !important;
+}
+.modal-header span{
+    padding: 20px 25px !important;
+}
+.modal-backdrop {
+    background-color: #eaeaea !important;
+  }
+/* Модальное окно */
+
+
+/* Крошки */
+nav{
+    margin: 27px auto 69px 220px;
+    font-size: 12px;
+}
+/* Крошки */
+
+/* Новость */
+.new{
+    margin-left: 220px;
+    margin-right: 220px;
+}
+.top-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.new-info{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 44px;
+}
+.view{
+    display: flex;
+    text-align: center;
+    top:28px;
+    right: 70px;
+    font-size: 12;
+}
+.view img{
+    padding-top: 3px;
+    width: 56px;
+    height: 20px;
+}
+.favorites img{
+    margin-bottom: 15px;
+}
+.new-share{
+    display: flex;
+    gap: 27px;
+}
+.new-share img{
+    width: 41px;
+    height: 41px;
+}
+
+.new-stata{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.stata-info{
+    display: flex;
+    gap: 44px;
+}
+.raiting img{
+    width: 30px;
+    height: 40px;
+}
+
+.comments{
+    position: relative;
+}
+.comments span{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.comments img{
+    width: 40px;
+    height: 40px; 
+}
+.categories{
+    display: flex;
+    gap: 14px;
+}
+.categories__card{
+    padding: 10px 32px;
+    background-color: #b5b5b5;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+.sub-title{
+    margin: 56px 125px 15px 0px;
+    font-family: sans-serif;
+}
+.new-body img{
+    width: 790px;
+    height: 375px;
+    object-fit: cover;
+    object-position: left;
+}
+.new-text{
+    margin: 28px 380px 62px 0px;
+}
+
+
+.new-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 18px;
+}
+summary{
+    width: 200px;
+    position: relative;
+    list-style: none;
+    user-select: none;
+}
+summary::after {
+    content: "▼"; /* Добавляем стрелочку вправо */
+    float: right; /* Выравниваем по правому краю */
+    padding-left: 15px;
+    position: absolute;
+}
+details[open] summary::after {
+    content: "▲"; /* Если список открыт, меняем на стрелочку вниз */
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.comment-card{
+    display: flex;
+    gap: 20px;
+    width: 780px;
+    background-color: #D5D4D4;
+    margin: 20px 0px;
+}
+
+.comment-card img{
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+}
+
+.comment-info{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    align-items: center;
+}
+
+.w-comment input{
+    width: 780px;
+    border-radius: 20px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #D5D4D4;
+    
+}
+.w-comment input:focus{
+    outline: 1px solid #E4C6C6;
+}
+.topik-new-card{
+    background: #b5b5b5;
+    width: 570px;
+    height: 72px;
+    padding: 7px 5px;
+    margin: 15px 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.topik-new-card p{
+    margin-bottom: 14px;
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.topik-new-card p:first-child{
+    font-size: 12px;
+}
+.section-topik-news{
+    margin: 20px auto;
+}
+/* Новость */
+
+/* Подвал */
+footer{
+    margin-top: 200px;
+    background-color:#dedede;
+}
+
+.subscripe{
+    background-color: #D5D4D4;
+    padding: 25px 220px 45px 220px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.wrapper-form{
+    position: relative;
+}
+.wrapper-form input{
+    height: 87px;
+    width: 1166px;
+    border-radius: 23px;
+    border: none;
+    padding-left: 26px;
+    font-size: 18px;
+    background-color: #e8e8e8;
+}
+.wrapper-form input:focus{
+    outline:1px solid #ab7d7d;
+}
+
+.wrapper-form button{
+    position: absolute;
+    top: -2px;
+    right: -6px;
+    height: 92px;
+    border-radius: 23px;
+    border: none;
+    width: 435px;
+    background-color: #E4C6C6;
+    font-size: 28px;
+}
+
+.mid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mid img{
+    width: 61px;
+    height: 61px;
+}
+
+.social{
+    display: flex;
+    gap: 240px;
+}
+.nav-links{
+    margin-top: 115px;
+    font-size: 14px;
+    display: flex;
+    gap: 390px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: black;
+}
+.buttom img{
+   width: 150px;
+   height: 150px;
+}
+.buttom{
+    display: flex;
+    padding: 80px 0px 20px 220px;
+    align-items: center;
+}
+.n1{
+    margin-right: 440px;
+}
+.n2{
+    margin-right: 150px;
+ }
+ .buttom input{
+     width: 400px;
+     height: 56px;
+     border-radius: 12px;
+     border: none;
+     padding-left: 25px;
+ }
+/* Подвал */
